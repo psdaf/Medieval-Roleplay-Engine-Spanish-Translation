@@ -1,8 +1,13 @@
 package rpsystem.Subsystems;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Arrow;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Projectile;
+import org.bukkit.util.Vector;
 import rpsystem.Commands.*;
 import rpsystem.Main;
 
@@ -200,6 +205,11 @@ public class CommandSubsystem {
             WhisperCommand command = new WhisperCommand(main);
             command.sendQuietMessage(sender, args);
             return true;
+        }
+
+        if (label.equalsIgnoreCase("sit")) {
+            SitCommand command = new SitCommand(main);
+            command.makePlayerSit(sender);
         }
 
         return false;
