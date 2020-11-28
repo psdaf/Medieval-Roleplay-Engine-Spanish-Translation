@@ -42,7 +42,7 @@ public class Main extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-        System.out.println("Medieval Roleplay Engine plugin enabling....");
+        System.out.println("Activando Plugin Motor de Roleplay Medieval....");
         this.getServer().getPluginManager().registerEvents(this, this);
 
         if (storage.oldSaveFolderPresent()) {
@@ -59,15 +59,15 @@ public class Main extends JavaPlugin implements Listener {
 
         Metrics metrics = new Metrics(this, pluginId);
 
-        System.out.println("Medieval Roleplay Engine plugin enabled.");
+        System.out.println("Plugin Motor de Roleplay Medieval activado.");
     }
 
     @Override
     public void onDisable() {
-        System.out.println("Medieval Roleplay Engine plugin disabling....");
+        System.out.println("Desactivando plugin Motor de Roleplay Medieval....");
         storage.saveCardFileNames();
         storage.saveCards();
-        System.out.println("Medieval Roleplay Engine plugin disabled.");
+        System.out.println("Motor de Roleplay Medieval desactivado.");
     }
 
     @Override
