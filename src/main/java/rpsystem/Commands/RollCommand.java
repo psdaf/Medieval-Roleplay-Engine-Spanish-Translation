@@ -21,9 +21,9 @@ public class RollCommand {
     static final DiceParser parser = new DefaultDiceParser();
     static final DiceInterpreter<RollHistory> roller = new DiceRoller();
 
-    static final String usageMsg = ChatColor.RED + "Usage: /roll (dice-count)d(side-count)+(modifier)";
-    public static final String invalidSyntaxMsg = ChatColor.RED + "Sorry! Invalid arguments, must be in standard Dice Notation (2d6+12)";
-    public static final String noPermMsg = ChatColor.RED + "Sorry! In order to use this command, you need the following permission: 'rp.roll'";
+    static final String usageMsg = ChatColor.RED + "Uso: /roll (número-de-dados)d(número-de-lados)+(modificador)";
+    public static final String invalidSyntaxMsg = ChatColor.RED + "Argumentos inválidos, tiene que ser una notación de dados estándar (2d6+12)";
+    public static final String noPermMsg = ChatColor.RED + "Para usar este comando, necesitas el permiso: 'rp.roll'";
 
     public RollCommand(Main plugin) {
         main = plugin;
@@ -58,7 +58,7 @@ public class RollCommand {
     }
 
     private static String processRolls(RollHistory rolls) {
-        StringBuilder messageBuilder = new StringBuilder(ChatColor.GREEN + "You rolled a ");
+        StringBuilder messageBuilder = new StringBuilder(ChatColor.GREEN + "Tiraste un ");
 
         rolls.getRollResults().forEach(rollResult -> {
 
@@ -69,7 +69,7 @@ public class RollCommand {
             messageBuilder.append(String.join(", ", results));
 
             if (results.size() > 1) {
-                messageBuilder.append(", with a total value of ").append(rollResult.getTotalRoll());
+                messageBuilder.append(", con un valor total de ").append(rollResult.getTotalRoll());
             }
 
             messageBuilder.append(".");
