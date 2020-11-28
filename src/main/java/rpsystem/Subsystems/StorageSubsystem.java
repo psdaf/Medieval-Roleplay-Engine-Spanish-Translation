@@ -28,9 +28,9 @@ public class StorageSubsystem {
             }
             File saveFile = new File("./plugins/MedievalRoleplayEngine/" + "cards.txt");
             if (saveFile.createNewFile()) {
-                System.out.println("Save file for character card filenames created.");
+                System.out.println("El archivo de guardado para los nombres de archivo de las tarjetas de personaje fue creado.");
             } else {
-                System.out.println("Save file for character card filenames already exists. Overwriting.");
+                System.out.println("Archivo de guardado para los nombres de archivo de las tarjetas ya existe. Sobreescribiendo.");
             }
 
             FileWriter saveWriter = new FileWriter(saveFile);
@@ -46,7 +46,7 @@ public class StorageSubsystem {
             saveWriter.close();
 
         } catch (IOException e) {
-            System.out.println("An error occurred while saving character card filenames.");
+            System.out.println("Ocurrió un error tratando de guardar los nombres de archivo de las tarjetas de personaje.");
         }
     }
 
@@ -60,7 +60,7 @@ public class StorageSubsystem {
 
     public void loadCards() {
         try {
-            System.out.println("Attempting to load character cards...");
+            System.out.println("Intentando cargar tarjetas de personaje...");
             File loadFile = new File("./plugins/MedievalRoleplayEngine/" + "cards.txt");
             Scanner loadReader = new Scanner(loadFile);
 
@@ -86,16 +86,16 @@ public class StorageSubsystem {
             }
 
             loadReader.close();
-            System.out.println("Character cards successfully loaded.");
+            System.out.println("Tarjetas de personaje cargadas.");
         } catch (FileNotFoundException e) {
-            System.out.println("Error loading the character cards!");
+            System.out.println("¡Error tratando de cargar las tarjetas de personaje!");
             e.printStackTrace();
         }
     }
 
     public void legacyLoadCards() {
         try {
-            System.out.println("Attempting to load character cards...");
+            System.out.println("Intentando cargar tarjetas de personaje...");
             File loadFile = new File("./plugins/medieval-roleplay-engine/" + "card-player-names.txt");
             Scanner loadReader = new Scanner(loadFile);
 
@@ -111,9 +111,9 @@ public class StorageSubsystem {
 
             loadReader.close();
 
-            System.out.println("Character cards successfully loaded.");
+            System.out.println("Tarjetas de personaje cargadas.");
         } catch (FileNotFoundException e) {
-            System.out.println("Error loading the character cards!");
+            System.out.println("¡Error tratando de cargar las tarjetas de personaje!");
             e.printStackTrace();
         }
     }
