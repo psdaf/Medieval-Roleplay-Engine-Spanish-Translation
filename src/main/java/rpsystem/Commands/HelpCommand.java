@@ -31,10 +31,10 @@ public class HelpCommand {
             player.sendMessage(ChatColor.AQUA + "/rphelp - Muestra una lista de comandos útiles.");
             player.sendMessage(ChatColor.AQUA + "/card help - Muestra una lista de comandos útiles sobre las tarjetas de personaje.");
             player.sendMessage(ChatColor.AQUA + "/bird - Envía un pájaro mensajero a otro jugador.");
-            player.sendMessage(ChatColor.AQUA + "/local or /rp - Entra al chat local.");
-            player.sendMessage(ChatColor.AQUA + "/global or /ooc - Entra al chat global.");
-            player.sendMessage(ChatColor.AQUA + "/emote or /me - Envía un emoticón a los jugadores cercanos.");
-            player.sendMessage(ChatColor.AQUA + "/roll or /dice - Tira un dado.");
+            player.sendMessage(ChatColor.AQUA + "/local o /rp - Entra al chat local.");
+            player.sendMessage(ChatColor.AQUA + "/global o /ooc - Entra al chat global.");
+            player.sendMessage(ChatColor.AQUA + "/emote o /me - Envía un emoticón a los jugadores cercanos.");
+            player.sendMessage(ChatColor.AQUA + "/roll o /dice - Tira un dado.");
             player.sendMessage(ChatColor.AQUA + "/title - Renombra un libro no escrito.");
             player.sendMessage(ChatColor.AQUA + "/yell - Envia un mensaje a jugadores lejanos (gritar).");
             player.sendMessage(ChatColor.AQUA + "/whisper - Envía un mensaje a jugadores muy cercanos (susurrar).");
