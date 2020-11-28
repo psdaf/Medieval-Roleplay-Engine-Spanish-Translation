@@ -26,13 +26,13 @@ public class PlayerInteractAtEntityEventHandler {
                 main.playersWithRightClickCooldown.add(player.getUniqueId());
 
                 if (player.hasPermission("rp.card.show.others") || player.hasPermission("rp.card.*") || player.hasPermission("rp.default")) {
-                    player.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + "\n == " + "Character Card of " + card.getPlayerUUID() + " == ");
-                    player.sendMessage(ChatColor.AQUA + "Name: " + card.getName());
-                    player.sendMessage(ChatColor.AQUA + "Race: " + card.getRace());
-                    player.sendMessage(ChatColor.AQUA + "Subculture: " + card.getSubculture());
-                    player.sendMessage(ChatColor.AQUA + "Age: " + card.getAge());
-                    player.sendMessage(ChatColor.AQUA + "Gender: " + card.getGender());
-                    player.sendMessage(ChatColor.AQUA + "Religion: " + card.getReligion());
+                    player.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + "\n == " + "Tarjeta de Personaje de " + card.getPlayerUUID() + " == ");
+                    player.sendMessage(ChatColor.AQUA + "Nombre: " + card.getName());
+                    player.sendMessage(ChatColor.AQUA + "Raza: " + card.getRace());
+                    player.sendMessage(ChatColor.AQUA + "Subcultura: " + card.getSubculture());
+                    player.sendMessage(ChatColor.AQUA + "Edad: " + card.getAge());
+                    player.sendMessage(ChatColor.AQUA + "Género: " + card.getGender());
+                    player.sendMessage(ChatColor.AQUA + "Religión: " + card.getReligion());
 
                     int seconds = 2;
                     main.getServer().getScheduler().runTaskLater(main, new Runnable() {
