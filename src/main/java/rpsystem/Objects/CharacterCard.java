@@ -91,9 +91,9 @@ public class CharacterCard {
             }
             File saveFile = new File("./plugins/MedievalRoleplayEngine/" + playerUUID + ".txt");
             if (saveFile.createNewFile()) {
-                System.out.println("Save file for character card belonging to " + playerUUID + " created.");
+                System.out.println("Archivo de guardado de la tarjeta de personaje de " + playerUUID + " fue creada.");
             } else {
-                System.out.println("Save file for character card belonging to " + playerUUID + " already exists. Altering.");
+                System.out.println("Archivo de guardado de la tarjeta de personaje de " + playerUUID + " ya existe. Alterando.");
             }
 
             FileWriter saveWriter = new FileWriter("./plugins/MedievalRoleplayEngine/" + playerUUID + ".txt");
@@ -112,7 +112,7 @@ public class CharacterCard {
             return true;
 
         } catch (IOException e) {
-            System.out.println("An error occurred saving character card belonging to " + playerUUID);
+            System.out.println("Ocurrió un error tratando de guardar la tarjeta de personaje de " + playerUUID);
             e.printStackTrace();
             return false;
         }
@@ -149,7 +149,7 @@ public class CharacterCard {
             loadReader.close();
             return true;
         } catch (FileNotFoundException e) {
-            System.out.println("An error occurred loading the file " + filename + ".");
+            System.out.println("Ocurrió un error tratando de cargar el archivo " + filename + ".");
             e.printStackTrace();
             return false;
         }
@@ -186,7 +186,7 @@ public class CharacterCard {
             loadReader.close();
             return true;
         } catch (FileNotFoundException e) {
-            System.out.println("An error occurred loading the file " + filename + ".");
+            System.out.println("Ocurrió un error tratando de cargar el archivo " + filename + ".");
             e.printStackTrace();
             return false;
         }
