@@ -27,17 +27,17 @@ public class YellCommand {
         if (player.hasPermission("rp.yell") || player.hasPermission("rp.default")) {
 
             if (args.length > 0) {
-                String message = ChatColor.RED + "" + String.format("%s yells: \"%s\"", main.utilities.getCard(player.getUniqueId()).getName(), main.utilities.createStringFromArgs(args));
+                String message = ChatColor.RED + "" + String.format("%s grita: \"%s\"", main.utilities.getCard(player.getUniqueId()).getName(), main.utilities.createStringFromArgs(args));
 
                 sendMessageToPlayersWithinDistance(player, message, 50);
             }
             else {
-                player.sendMessage(ChatColor.RED + "Usage: /yell (message)");
+                player.sendMessage(ChatColor.RED + "Uso: /yell (mensaje)");
             }
 
         }
         else {
-            player.sendMessage(ChatColor.RED + "Sorry! In order to use this command, you need the following permission: 'rp.yell'");
+            player.sendMessage(ChatColor.RED + "Para usar este comando, necesitas el permiso: 'rp.yell'");
         }
 
     }
