@@ -41,20 +41,20 @@ public class TitleCommand {
 
                         player.getInventory().setItemInMainHand(book);
 
-                        player.sendMessage(ChatColor.GREEN + "Title added to book!");
+                        player.sendMessage(ChatColor.GREEN + "¡Título añadido!");
                     }
                     else {
-                        player.sendMessage(ChatColor.RED + "Usage: /title (new title)");
+                        player.sendMessage(ChatColor.RED + "Uso: /title (nuevo título)");
                     }
 
                 }
                 else {
-                    player.sendMessage(ChatColor.RED + "You have to be holding a book and quill to use this command!");
+                    player.sendMessage(ChatColor.RED + "¡Tienes que sostener un libro y pluma para usar este comando!");
                 }
 
             }
             else {
-                player.sendMessage(ChatColor.RED + "Sorry! In order to use this command, you need the following permission: 'rp.title'");
+                player.sendMessage(ChatColor.RED + "Para usar este comando, necesitas el permiso: 'rp.title'");
             }
         }
 
