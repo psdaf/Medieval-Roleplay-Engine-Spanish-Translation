@@ -30,20 +30,20 @@ public class CardCommand {
                 for (CharacterCard card : cards) {
                     if (card.getPlayerUUID() != null) {
                         if (card.getPlayerUUID().equals(player.getUniqueId())) {
-                            player.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + "\n----------\n" + "Character Card of " + Bukkit.getOfflinePlayer(card.getPlayerUUID()).getName() + "\n----------\n");
-                            player.sendMessage(ChatColor.AQUA + "Name: " + card.getName());
-                            player.sendMessage(ChatColor.AQUA + "Race: " + card.getRace());
-                            player.sendMessage(ChatColor.AQUA + "Subculture: " + card.getSubculture());
-                            player.sendMessage(ChatColor.AQUA + "Age: " + card.getAge());
-                            player.sendMessage(ChatColor.AQUA + "Gender: " + card.getGender());
-                            player.sendMessage(ChatColor.AQUA + "Religion: " + card.getReligion());
+                            player.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + "\n----------\n" + "Tarjeta de Personaje de " + Bukkit.getOfflinePlayer(card.getPlayerUUID()).getName() + "\n----------\n");
+                            player.sendMessage(ChatColor.AQUA + "Nombre: " + card.getName());
+                            player.sendMessage(ChatColor.AQUA + "Raza: " + card.getRace());
+                            player.sendMessage(ChatColor.AQUA + "Subcultura: " + card.getSubculture());
+                            player.sendMessage(ChatColor.AQUA + "Edad: " + card.getAge());
+                            player.sendMessage(ChatColor.AQUA + "Género: " + card.getGender());
+                            player.sendMessage(ChatColor.AQUA + "Religión: " + card.getReligion());
                             return;
                         }
                     }
                 }
             }
             else {
-                player.sendMessage(ChatColor.RED + "Sorry! In order to use this command, you need the following permission: 'rp.card.show'");
+                player.sendMessage(ChatColor.RED + "Para poder usar este comando, necesitas el permiso: 'rp.card.show'");
             }
 
         }
@@ -55,18 +55,18 @@ public class CardCommand {
             Player player = (Player) sender;
 
             if (player.hasPermission("rp.card.help") || player.hasPermission("rp.card.*") || player.hasPermission("rp.default")) {
-                sender.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + " == " + "Character Card Commands" + " == ");
-                sender.sendMessage(ChatColor.AQUA + "/card - View your character card.");
-                sender.sendMessage(ChatColor.AQUA + "/card (player) - View the character card of a specific player.");
-                sender.sendMessage(ChatColor.AQUA + "/card name (name) - Change your character's name.");
-                sender.sendMessage(ChatColor.AQUA + "/card race (race) - Change your character's race.");
-                sender.sendMessage(ChatColor.AQUA + "/card subculture (subculture) - Change your character's subculture.");
-                sender.sendMessage(ChatColor.AQUA + "/card age (age) - Change your character's age.");
-                sender.sendMessage(ChatColor.AQUA + "/card gender (gender) - Change your character's gender.");
-                sender.sendMessage(ChatColor.AQUA + "/card religion (religion) - Change your character's religion.");
+                sender.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + " == " + "Comando de Tarjeta de Personaje" + " == ");
+                sender.sendMessage(ChatColor.AQUA + "/card - Mira tu Tarjeta de Personaje.");
+                sender.sendMessage(ChatColor.AQUA + "/card (player) - Mira la Tarjeta de Personaje de un jugador específico.");
+                sender.sendMessage(ChatColor.AQUA + "/card name (name) - Cambia el nombre de tu personaje.");
+                sender.sendMessage(ChatColor.AQUA + "/card race (race) - Cambia la raza de tu personaje.");
+                sender.sendMessage(ChatColor.AQUA + "/card subculture (subculture) - Cambia la subcultura de tu personaje.");
+                sender.sendMessage(ChatColor.AQUA + "/card age (age) - Cambia la edad de tu personaje.");
+                sender.sendMessage(ChatColor.AQUA + "/card gender (gender) - Cambia el género de tu personaje.");
+                sender.sendMessage(ChatColor.AQUA + "/card religion (religion) - Cambia la religión de tu personaje.");
             }
             else {
-                player.sendMessage(ChatColor.RED + "Sorry! In order to use this command, you need the following permission: 'rp.card.help'");
+                player.sendMessage(ChatColor.RED + "Para usar este comando, necesitas el permiso: 'rp.card.help'");
             }
         }
 
@@ -85,7 +85,7 @@ public class CardCommand {
 
                                 if (args.length > 1) {
                                     card.setName(createStringFromFirstArgOnwards(args, 1));
-                                    player.sendMessage(ChatColor.GREEN + "Name set! Type /card to see changes.");
+                                    player.sendMessage(ChatColor.GREEN + "¡Nombre listo! Escribe /card para ver los cambios.");
 
                                     // cooldown
                                     main.playersOnNameChangeCooldown.add(player.getUniqueId());
@@ -95,23 +95,23 @@ public class CardCommand {
                                         @Override
                                         public void run() {
                                             main.playersOnNameChangeCooldown.remove(player.getUniqueId());
-                                            player.sendMessage(ChatColor.GREEN + "You can now change your character's name again.");
+                                            player.sendMessage(ChatColor.GREEN + "Ya puedes cambiar el nombre de tu personaje otra vez.");
                                         }
                                     }, seconds * 20);
                                 }
                                 else {
-                                    player.sendMessage(ChatColor.RED + "Usage: /card name (character-name)");
+                                    player.sendMessage(ChatColor.RED + "Uso: /card name (nombre-personaje)");
                                 }
                             }
                             else {
-                                player.sendMessage(ChatColor.RED + "You must wait before changing your name again!");
+                                player.sendMessage(ChatColor.RED + "¡Tienes que esperar antes de cambiar tu nombre otra vez!");
                             }
                         }
 
                 }
             }
             else {
-                player.sendMessage(ChatColor.RED + "Sorry! In order to use this command, you need the following permission: 'rp.card.name'");
+                player.sendMessage(ChatColor.RED + "Para usar este comando, necesitas el permiso: 'rp.card.name'");
             }
 
         }
@@ -128,16 +128,16 @@ public class CardCommand {
 
                         if (args.length > 1) {
                             card.setRace(args[1]);
-                            player.sendMessage(ChatColor.GREEN + "Race set! Type /card to see changes.");
+                            player.sendMessage(ChatColor.GREEN + "¡Raza lista! Escribe /card para ver los cambios.");
                         }
                         else {
-                            player.sendMessage(ChatColor.RED + "Usage: /card race (character-race)");
+                            player.sendMessage(ChatColor.RED + "Uso: /card race (raza-de-personaje)");
                         }
                     }
                 }
             }
             else {
-                player.sendMessage(ChatColor.RED + "Sorry! In order to use this command, you need the following permission: 'rp.card.race'");
+                player.sendMessage(ChatColor.RED + "Para usar este comando, necesitas el permiso: 'rp.card.race'");
             }
 
         }
@@ -154,16 +154,16 @@ public class CardCommand {
 
                         if (args.length > 1) {
                             card.setSubculture(args[1]);
-                            player.sendMessage(ChatColor.GREEN + "Subculture set! Type /card to see changes.");
+                            player.sendMessage(ChatColor.GREEN + "¡Subcultura hecha! Escribe /card para ver los cambios.");
                         }
                         else {
-                            player.sendMessage(ChatColor.RED + "Usage: /card subculture (character-subculture)");
+                            player.sendMessage(ChatColor.RED + "Uso: /card subculture (subcultura-de-personaje)");
                         }
                     }
                 }
             }
             else {
-                player.sendMessage(ChatColor.RED + "Sorry! In order to use this command, you need the following permission: 'rp.card.subculture'");
+                player.sendMessage(ChatColor.RED + "Para usar este comando, necesitas el permiso: 'rp.card.subculture'");
             }
 
         }
@@ -180,16 +180,16 @@ public class CardCommand {
 
                         if (args.length > 1) {
                             card.setReligion(args[1]);
-                            player.sendMessage(ChatColor.GREEN + "Religion set! Type /card to see changes.");
+                            player.sendMessage(ChatColor.GREEN + "¡Religión hecha! Escribe /card para ver los cambios.");
                         }
                         else {
-                            player.sendMessage(ChatColor.RED + "Usage: /card religion (character-religion)");
+                            player.sendMessage(ChatColor.RED + "Uso: /card religion (religión-de-personaje)");
                         }
                     }
                 }
             }
             else {
-                player.sendMessage(ChatColor.RED + "Sorry! In order to use this command, you need the following permission: 'rp.card.religion'");
+                player.sendMessage(ChatColor.RED + "Para usar el comando, necesitas el permiso: 'rp.card.religion'");
             }
 
         }
@@ -206,16 +206,16 @@ public class CardCommand {
 
                         if (args.length > 1) {
                             card.setAge(Integer.parseInt(args[1]));
-                            player.sendMessage(ChatColor.GREEN + "Age set! Type /card to see changes.");
+                            player.sendMessage(ChatColor.GREEN + "¡Edad hecha! Escribe /card para ver los cambios.");
                         }
                         else {
-                            player.sendMessage(ChatColor.RED + "Usage: /card age (character-age)");
+                            player.sendMessage(ChatColor.RED + "Uso: /card age (edad-de-personaje)");
                         }
                     }
                 }
             }
             else {
-                player.sendMessage(ChatColor.RED + "Sorry! In order to use this command, you need the following permission: 'rp.card.age'");
+                player.sendMessage(ChatColor.RED + "Para usar el comando, necesitas el permiso: 'rp.card.age'");
             }
 
         }
@@ -232,16 +232,16 @@ public class CardCommand {
 
                         if (args.length > 1) {
                             card.setGender(args[1]);
-                            player.sendMessage(ChatColor.GREEN + "Gender set! Type /card to see changes.");
+                            player.sendMessage(ChatColor.GREEN + "¡Género hecho! Escribe /card para ver los cambios.");
                         }
                         else {
-                            player.sendMessage(ChatColor.RED + "Usage: /card gender (character-gender)");
+                            player.sendMessage(ChatColor.RED + "Uso: /card gender (género-de-personaje)");
                         }
                     }
                 }
             }
             else {
-                player.sendMessage(ChatColor.RED + "Sorry! In order to use this command, you need the following permission: 'rp.card.gender'");
+                player.sendMessage(ChatColor.RED + "Para usar este comando, necesitas el permiso: 'rp.card.gender'");
             }
 
         }
@@ -256,23 +256,23 @@ public class CardCommand {
                 for (CharacterCard card : cards) {
                     if (args.length > 0) {
                         if (card.getPlayerUUID().equals(findUUIDBasedOnPlayerName(args[0]))) {
-                            sender.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + "\n----------\n" + "Character Card of " + Bukkit.getOfflinePlayer(card.getPlayerUUID()).getName() + "\n----------\n");
-                            sender.sendMessage(ChatColor.AQUA + "Name: " + card.getName());
-                            sender.sendMessage(ChatColor.AQUA + "Race: " + card.getRace());
-                            sender.sendMessage(ChatColor.AQUA + "Subculture: " + card.getSubculture());
-                            sender.sendMessage(ChatColor.AQUA + "Age: " + card.getAge());
-                            sender.sendMessage(ChatColor.AQUA + "Gender: " + card.getGender());
-                            sender.sendMessage(ChatColor.AQUA + "Religion: " + card.getReligion());
+                            sender.sendMessage(ChatColor.BOLD + "" + ChatColor.AQUA + "\n----------\n" + "Tarjeta de Personaje de " + Bukkit.getOfflinePlayer(card.getPlayerUUID()).getName() + "\n----------\n");
+                            sender.sendMessage(ChatColor.AQUA + "Nombre: " + card.getName());
+                            sender.sendMessage(ChatColor.AQUA + "Raza: " + card.getRace());
+                            sender.sendMessage(ChatColor.AQUA + "Subcultura: " + card.getSubculture());
+                            sender.sendMessage(ChatColor.AQUA + "Edad: " + card.getAge());
+                            sender.sendMessage(ChatColor.AQUA + "Género: " + card.getGender());
+                            sender.sendMessage(ChatColor.AQUA + "Religión: " + card.getReligion());
                             return;
                         }
                     }
                 }
 
-                player.sendMessage(ChatColor.RED + "That player wasn't found!");
+                player.sendMessage(ChatColor.RED + "¡El jugador no fue encontrado!");
 
             }
             else {
-                player.sendMessage(ChatColor.RED + "Sorry! In order to use this command, you need the following permission: 'rp.card.show.others'");
+                player.sendMessage(ChatColor.RED + "Para usar este comando, necesitas el permiso: 'rp.card.show.others'");
             }
 
         }

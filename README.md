@@ -1,23 +1,23 @@
-# What is this?
-A minecraft plugin for players to use to roleplay more effectively.
+# ¿Qué es esto?
+Un plugin de Minecraft que brinda a tus jugadores una experiencia de roleplay más efectiva.
 
-# Notes
-- Project building must be done with Java 8 unless your test server is expecting another version.
-- Testing can be done by running a local spigot server with the compiled JAR in the plugins folder and checking the console.
+# Notas
+- El "building" del proyecto tiene que realizarse con Java 8 a menos que tu servidor de prueba esté usando otra versión.
+- El testeo puede hacerse en un servidor spigot local con el JAR compilado dentro de la carpeta de plugins y observando la consola.
 
-# Versions
--  0.1 Initial Build
--  0.2 'Character Card Class' update
--  0.3 'Saving/Loading' update
--  0.4 'Card Command' update
--  0.5 'Message Improvements' update
--  0.6 'Card Help' update
--  0.7 'Manual Saving/Loading' update
--  0.8 'Messenger Birds' update
--  0.9 'Chat System' update
--  1.0 'Emotes' update
--  1.1 'Right Click To View' update
--  1.2 'Dice Roll' update
--  1.3 'Permissions' update
--  1.4 'Title Command' update
--  1.5 'Dice Improvement, bStats, Yell, Whisper, Help'  update
+# Versiones
+-  0.1 Build Inicial
+-  0.2 Actualización 'Clase de Tarjeta de Personaje'
+-  0.3 Actualización 'Guardado/Cargado'
+-  0.4 Actualización 'Comando de Tarjeta'
+-  0.5 Actualización 'Mejora de Mensajes'
+-  0.6 Actualización 'Ayuda de Tarjeta'
+-  0.7 Actualización 'Guardado/Cargado Manual'
+-  0.8 Actualización 'Pájaros Mensajeros'
+-  0.9 Actualización 'Sistema de Chat'
+-  1.0 Actualización 'Emoticones'
+-  1.1 Actualización 'Click Derecho Para Ver'
+-  1.2 Actualización 'Tiro de Dados'
+-  1.3 Actualización 'Permisos'
+-  1.4 Actualización 'Comando de Título'
+-  1.5 Actualización 'Mejora de Dados, bStats, Gritar, Susurrar, Ayuda'

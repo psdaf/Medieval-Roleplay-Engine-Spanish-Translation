@@ -73,7 +73,7 @@ public class CommandSubsystem {
                             return true;
                         }
                         else {
-                            player.sendMessage(ChatColor.RED + "Sorry! In order to use this command, you need the following permission: 'rp.card.forcesave'");
+                            player.sendMessage(ChatColor.RED + "Para usar este comando, necesitas el permiso: 'rp.card.forcesave'");
                             return false;
                         }
 
@@ -89,7 +89,7 @@ public class CommandSubsystem {
                             return true;
                         }
                         else {
-                            player.sendMessage(ChatColor.RED + "Sorry! In order to use this command, you need the following permission: 'rp.card.forceload'");
+                            player.sendMessage(ChatColor.RED + "Para usar este comando, necesitas el permiso: 'rp.card.forceload'");
                             return false;
                         }
                     }
@@ -113,16 +113,16 @@ public class CommandSubsystem {
                 if (player.hasPermission("rp.local") || player.hasPermission("rp.rp") || player.hasPermission("rp.default")) {
                     if (!main.playersSpeakingInLocalChat.contains(player.getUniqueId())) {
                         main.playersSpeakingInLocalChat.add(player.getUniqueId());
-                        player.sendMessage(ChatColor.GREEN + "You are now talking in local chat.");
+                        player.sendMessage(ChatColor.GREEN + "Ahora estás hablando en el chat local.");
                         return true;
                     }
                     else {
-                        player.sendMessage(ChatColor.RED + "You're already talking in local chat!");
+                        player.sendMessage(ChatColor.RED + "¡Ya estás en el chat local!");
                         return false;
                     }
                 }
                 else {
-                    player.sendMessage(ChatColor.RED + "Sorry! In order to use this command, you need one the following permissions: 'rp.local', 'rp.rp'");
+                    player.sendMessage(ChatColor.RED + "Para usar este comando, necesitas el permiso: 'rp.local', 'rp.rp'");
                     return false;
                 }
 
@@ -135,14 +135,14 @@ public class CommandSubsystem {
                 if (player.hasPermission("rp.global") || player.hasPermission("rp.ooc") || player.hasPermission("rp.default")) {
                     if (main.playersSpeakingInLocalChat.contains(player.getUniqueId())) {
                         main.playersSpeakingInLocalChat.remove(player.getUniqueId());
-                        player.sendMessage(ChatColor.GREEN + "You are now talking in global chat.");
+                        player.sendMessage(ChatColor.GREEN + "Ahora estás hablando en el chat global.");
                     }
                     else {
-                        player.sendMessage(ChatColor.RED + "You're already talking in global chat!");
+                        player.sendMessage(ChatColor.RED + "¡Ya estás en el chat global!");
                     }
                 }
                 else {
-                    player.sendMessage(ChatColor.RED + "Sorry! In order to use this command, you need one the following permissions: 'rp.global', 'rp.ooc'");
+                    player.sendMessage(ChatColor.RED + "Para usar este comando, necesitas el permiso: 'rp.global', 'rp.ooc'");
                 }
 
             }
@@ -160,7 +160,7 @@ public class CommandSubsystem {
                     }
                 }
                 else {
-                    player.sendMessage(ChatColor.RED + "Sorry! In order to use this command, you need one the following permissions: 'rp.emote', 'rp.me'");
+                    player.sendMessage(ChatColor.RED + "Para usar este comando, necesitas el permiso: 'rp.emote', 'rp.me'");
                     return false;
                 }
 
@@ -182,7 +182,7 @@ public class CommandSubsystem {
                     }
                 }
                 else {
-                    player.sendMessage(ChatColor.RED + "Sorry! In order to use this command, you need one the following permissions: 'rp.roll', 'rp.dice'");
+                    player.sendMessage(ChatColor.RED + "Para usar este comando, necesitas el permiso: 'rp.roll', 'rp.dice'");
                 }
 
             }

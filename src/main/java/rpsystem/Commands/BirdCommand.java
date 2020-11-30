@@ -26,27 +26,27 @@ public class BirdCommand {
 
         if (player.hasPermission("rp.bird") || player.hasPermission("rp.default")) {
             if (main.playersWithBusyBirds.contains(player.getUniqueId())) {
-                player.sendMessage(ChatColor.RED + "Your bird is already on a mission!");
+                player.sendMessage(ChatColor.RED + "¡Tu pájaro ya se encuentra en una misión!");
                 return;
             }
 
             // zero args check
             if (args.length < 2) {
-                player.sendMessage(ChatColor.RED + "Usage: /bird (player-name) (message)");
+                player.sendMessage(ChatColor.RED + "Uso: /bird (nombre-jugador) (mensaje)");
                 return;
             }
 
             Player targetPlayer = getServer().getPlayer(args[0]);
 
             if (targetPlayer == null) {
-                player.sendMessage(ChatColor.RED + "That player isn't online!");
+                player.sendMessage(ChatColor.RED + "¡Ese jugador no está online!");
                 return;
             }
 
             String message = createStringFromFirstArgOnwards(args, 1);
 
             if (!(player.getLocation().getWorld().getName().equalsIgnoreCase(targetPlayer.getLocation().getWorld().getName()))) {
-                player.sendMessage(ChatColor.RED + "You can't send a bird to a player in another world.");
+                player.sendMessage(ChatColor.RED + "No puedes enviar un pájaro a un jugador que se encuentre en otro mundo.");
                 return;
             }
 
@@ -57,19 +57,19 @@ public class BirdCommand {
             getServer().getScheduler().runTaskLater(main, new Runnable() {
                 @Override
                 public void run() {
-                    targetPlayer.sendMessage(ChatColor.GREEN + "A bird lands nearby and drops a message at your feet! It was sent by " + player.getName() + ". It reads:");
+                    targetPlayer.sendMessage(ChatColor.GREEN + "¡Un pájaro descendió y dejó un mensaje a tus pies! Fue enviado por " + player.getName() + ". Dice:");
                     targetPlayer.sendMessage(ChatColor.GREEN + "" + ChatColor.ITALIC + "'" + message + "'");
-                    player.sendMessage(ChatColor.GREEN + "Your bird has reached " + targetPlayer.getName() + "!");
+                    player.sendMessage(ChatColor.GREEN + "Tu pájaro ha llegado a " + targetPlayer.getName() + "!");
                     main.playersWithBusyBirds.remove(player.getUniqueId());
 
                 }
             }, seconds * 20);
 
-            player.sendMessage(ChatColor.GREEN + "The bird flies off with your message.");
+            player.sendMessage(ChatColor.GREEN + "El pájaro partió con tu mensaje.");
             main.playersWithBusyBirds.add(player.getUniqueId());
         }
         else {
-            player.sendMessage(ChatColor.RED + "Sorry! In order to use this command, you need the following permission: 'rp.bird'");
+            player.sendMessage(ChatColor.RED + "Para poder usar este comando, necesitas el siguiente permiso: 'rp.bird'");
         }
 
     }
